@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, FormControl, InputBase } from '@material-ui/core';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import useNotas from '../hooks/useNotas';
+import { Container, NoteContainer, Title } from '../style/Cadastro';
 
 const Cadastro = () => {
   const [title, setTitle] = useState();
@@ -22,21 +23,19 @@ const Cadastro = () => {
   }
 
   return(
-    <div>
-      <h1>Aula alura</h1>
-      <FormControl>
-        <InputBase type="text" onChange={handleChangeTitle}/>
-        <TextareaAutosize
-          placeholder="Escreva sua nota"
-          onChange={handleChangeText}
-        />
-        <Button
-          onClick={handleCreateNote}
-        >
-          Criar nota
-        </Button>
-      </FormControl>
-    </div>
+    <Container>
+      <NoteContainer>
+        <FormControl>
+          <Title type="text" onChange={handleChangeTitle} placeholder="Título"/>
+          <InputBase fullwidth multiline type="text" onChange={handleChangeText} placeholder="Escreva sua nota"/>
+          <Button
+            onClick={handleCreateNote}
+          >
+            Criar nota
+          </Button>
+        </FormControl>
+      </NoteContainer>
+    </Container>
   );
 }
 
