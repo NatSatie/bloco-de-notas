@@ -1,4 +1,13 @@
 import styled from 'styled-components'
+import { InputBase } from '@material-ui/core';
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 25%;
+  width: 100%;
+`;
 
 export const NoteContainer = styled.div`
   background: #FFF0A1;
@@ -16,7 +25,7 @@ export const Header = styled.div`
   vertical-align: center;
 `;
 
-export const Title = styled.div`
+export const Title = styled(InputBase)`
   font-family: 'Noto Serif';
   font-size: 20px;
   font-weight: 700;
